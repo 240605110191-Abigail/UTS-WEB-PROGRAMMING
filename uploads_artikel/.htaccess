@@ -1,0 +1,19 @@
+mkdir -p /home/claude/blog/uploads_penulis /home/claude/blog/uploads_artikel
+
+cat > /home/claude/blog/uploads_penulis/.htaccess << 'EOF'
+# Cegah eksekusi file PHP di folder ini
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+EOF
+
+cat > /home/claude/blog/uploads_artikel/.htaccess << 'EOF'
+# Cegah eksekusi file PHP di folder ini
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+EOF
+
+echo "Folders and .htaccess created"
